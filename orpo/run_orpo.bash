@@ -1,10 +1,12 @@
 #!/bin/bash
 
+#가지고 있는 gpu를 기준으로 수정해주세요.
 export CUDA_VISIBLE_DEVICES=0,1,2,3,4,5,6,7
 export PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True
 
 mkdir -p ./logs
 
+#원하는 directeory와 model_id, save_dir 등 수정해주세요.
 DIRECTORY="qwen_instruct_orpo"
 LOG_FILE="${DIRECTORY}.log"
 
