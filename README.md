@@ -92,14 +92,14 @@ _학습 및 추론의 실행 방법은 아래에서 확인하실 수 있습니�
 
 | Backbone Model | PEFT Method | Learning Rate | Batch Size | Epoch |
 |:--------------|-------------------:|-----:|------------:|:-----:|
-| [`MLP-KTLim/llama-3-Korean-Bllossom-8B`](https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B) | QLoRA | 2e-4 | CustomRefOfficialTermDataset | X |
-| [`x2bee/POLAR-14B-v0.2`](https://huggingface.co/x2bee/POLAR-14B-v0.2) | QLoRA | 2e-4 | CustomRefDefinitionDataset | X |
-| [`rtzr/ko-gemma-2-9b-it`](https://huggingface.co/rtzr/ko-gemma-2-9b-it) | QLoRA | 1e-4 | CustomRefInstructionDataset | X |
-| [`beomi/Solar-Ko-Recovery-11B`](https://huggingface.co/beomi/Solar-Ko-Recovery-11B) | LoRA | 1e-4 | CustomRefDataset | X |
-| [`yanolja/EEVE-Korean-Instruct-10.8B-v1.0`](https://huggingface.co/yanolja/EEVE-Korean-Instruct-10.8B-v1.0) | LoRA | 1e-4 | CustomRefInstructionDataset | X |
-| [`Qwen/Qwen2-7B`](https://huggingface.co/Qwen/Qwen2-7B) | LoRA | 1e-4 | SystemRefOfficialTermDataset | X |
-| [`Qwen/Qwen2-7B-Instruct`](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | LoRA | 2e-4 | CustomRefInstructionDataset | X |
-| [`spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat`](https://huggingface.co/spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat) | LoRA | 2e-4 | CustomRefInstructionDataset | X |
+| [`MLP-KTLim/llama-3-Korean-Bllossom-8B`](https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B) | QLoRA | 2e-4 | CustomRefOfficialTermDataset | 15 |
+| [`x2bee/POLAR-14B-v0.2`](https://huggingface.co/x2bee/POLAR-14B-v0.2) | QLoRA | 2e-4 | CustomRefDefinitionDataset | 18 |
+| [`rtzr/ko-gemma-2-9b-it`](https://huggingface.co/rtzr/ko-gemma-2-9b-it) | QLoRA | 1e-4 | CustomRefInstructionDataset | 23 |
+| [`beomi/Solar-Ko-Recovery-11B`](https://huggingface.co/beomi/Solar-Ko-Recovery-11B) | LoRA | 1e-4 | CustomRefDataset | 11 |
+| [`yanolja/EEVE-Korean-Instruct-10.8B-v1.0`](https://huggingface.co/yanolja/EEVE-Korean-Instruct-10.8B-v1.0) | LoRA | 1e-4 | CustomRefInstructionDataset | 8 |
+| [`Qwen/Qwen2-7B`](https://huggingface.co/Qwen/Qwen2-7B) | LoRA | 1e-4 | SystemRefOfficialTermDataset | 6 |
+| [`Qwen/Qwen2-7B-Instruct`](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | LoRA | 2e-4 | CustomRefInstructionDataset | 8 |
+| [`spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat`](https://huggingface.co/spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat) | LoRA | 2e-4 | CustomRefInstructionDataset | 5 |
 
 
 ### c. Parameter Efficient Fine Tuning (PEFT)
