@@ -238,7 +238,7 @@ $ mv 대화맥락추론_test.json data_test.json
 $ mv 대화맥락추론_train.json data_train.json
 ```
 
-최종 `resource/data` 파일 형식:
+최종 `resource/data`, 'resource/results' 파일 형식:
 
 ```bash
 KR-Conversation-Inference
