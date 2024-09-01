@@ -180,6 +180,7 @@ Forward pass 가 기존의 DPO와 RLHF 방식에 비해 절반으로 줄임으�
 # 학습에 필요한 리소스들을 보관하는 디렉토리
 resource
 └── data
+└── results
 
 # 실행 가능한 python 스크립트를 보관하는 디렉토리
 run
@@ -238,7 +239,7 @@ $ mv 대화맥락추론_test.json data_test.json
 $ mv 대화맥락추론_train.json data_train.json
 ```
 
-최종 `resource/data`, 'resource/results' 파일 형식:
+최종 `resource/data` 파일 형식:
 
 ```bash
 KR-Conversation-Inference
@@ -250,10 +251,6 @@ KR-Conversation-Inference
 │   │   └── data_train.json
 │   │   └── sample.json
 │   │
-│   ├── results # results 파일 형식
-│   │   └── folder1
-│   │   └── folder2
-│   │   └── folder3
 │   └── ...  
 └── ... 
 ```
