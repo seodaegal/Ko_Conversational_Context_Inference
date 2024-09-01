@@ -249,7 +249,11 @@ KR-Conversation-Inference
 │   │   └── data_test.json
 │   │   └── data_train.json
 │   │   └── sample.json
-│   │ 
+│   │
+│   ├── results # results 파일 형식
+│   │   └── folder1
+│   │   └── folder2
+│   │   └── folder3
 │   └── ...  
 └── ... 
 ```
