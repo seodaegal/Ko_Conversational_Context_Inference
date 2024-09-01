@@ -11,16 +11,11 @@ def main(args):
         torch_dtype=torch.bfloat16,
         device_map="auto",
     )
-    # if torch.cuda.is_available():
-    #     model = model.to("cuda")
+
     
     tokenizer = AutoTokenizer.from_pretrained(args.tokenizer or args.model_id)
-    # if tokenizer.pad_token is None:
-    #     tokenizer.pad_token = tokenizer.eos_token
 
-    breakpoint()
-
-    #만약 argparse로 받은 모델에 "qwen"이라는 단어가 들어가면 아래 조건을 추가 - error handling for Qwen 
+    #error handling for Qwen 
     if "Qwen" in args.model_id:
         tokenizer.add_special_tokens({"bos_token": tokenizer.eos_token})
         tokenizer.bos_token_id = tokenizer.eos_token_id
@@ -29,8 +24,8 @@ def main(args):
             tokenizer.pad_token = tokenizer.eos_token
 
 
-    train_dataset = CustomDataset("resource/data/대화맥락추론_train.json", tokenizer)
-    valid_dataset = CustomDataset("resource/data/대화맥락추론_dev.json", tokenizer)
+    train_dataset = CustomDataset("resource/data/data_train.json", tokenizer)
+    valid_dataset = CustomDataset("resource/data/data_dev.json", tokenizer)
 
     train_dataset_hf = custom_to_hf_dataset(train_dataset)
     valid_dataset_hf = custom_to_hf_dataset(valid_dataset)
