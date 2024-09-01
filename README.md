@@ -263,7 +263,14 @@ KR-Conversation-Inference
 
 
 ## 10. License
-
+Qwen/Qwen2-7B Apache License  
+yanolja/EEVE-Korean-10.8B-v1.0 Apache License  
+spow12/Ko-Qwen2-7B-Instruct CC-BY-NC-4.0  
+beomi/Solar-Ko-Recovery-11B  Apache License  
+x2bee/POLAR-14B-v0.2    Apache License  
+MLP-KTLim/llama-3-Korean-Bllossom-8B  META LLAMA 3 COMMUNITY LICENSE AGREEMENT  
+rtzr/ko-gemma-2-9b-it Gemma Terms of Use  
+spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat Creative Commons Attribution Non Commercial 4.0  
 
 ## 11. Reference
 - [Github teddysum/Korean_CCI_2024](https://github.com/teddysum/Korean_CCI_2024)
