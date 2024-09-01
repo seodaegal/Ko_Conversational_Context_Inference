@@ -1,6 +1,6 @@
 # 2024 국립국어원 인공지능의 한국어 능력 평가
 
-대화 맥락 추론 (가 유형) - **모두의 말뿡치** 팀
+대화 맥락 추론 (가 유형) - **모두의 말뿡치** 팀 🍊
 > 리더보드 2위 모델- **'정말뿡'**
 
 
@@ -89,6 +89,19 @@ _학습 및 추론의 실행 방법은 아래에서 확인하실 수 있습니�
 
 ### b. 하이퍼 파라미터
 
+
+| Backbone Model | PEFT Method | Learning Rate | Batch Size | Epoch |
+|:--------------|-------------------:|-----:|------------:|:-----:|
+| [`MLP-KTLim/llama-3-Korean-Bllossom-8B`](https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B) | QLoRA | 2e-4 | CustomRefOfficialTermDataset | X |
+| [`x2bee/POLAR-14B-v0.2`](https://huggingface.co/x2bee/POLAR-14B-v0.2) | QLoRA | 2e-4 | CustomRefDefinitionDataset | X |
+| [`rtzr/ko-gemma-2-9b-it`](https://huggingface.co/rtzr/ko-gemma-2-9b-it) | QLoRA | 1e-4 | CustomRefInstructionDataset | X |
+| [`beomi/Solar-Ko-Recovery-11B`](https://huggingface.co/beomi/Solar-Ko-Recovery-11B) | LoRA | 1e-4 | CustomRefDataset | X |
+| [`yanolja/EEVE-Korean-Instruct-10.8B-v1.0`](https://huggingface.co/yanolja/EEVE-Korean-Instruct-10.8B-v1.0) | LoRA | 1e-4 | CustomRefInstructionDataset | X |
+| [`Qwen/Qwen2-7B`](https://huggingface.co/Qwen/Qwen2-7B) | LoRA | 1e-4 | SystemRefOfficialTermDataset | X |
+| [`Qwen/Qwen2-7B-Instruct`](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | LoRA | 2e-4 | CustomRefInstructionDataset | X |
+| [`spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat`](https://huggingface.co/spow12/Qwen2-7B-ko-Instruct-orpo-ver_2.0_wo_chat) | LoRA | 2e-4 | CustomRefInstructionDataset | X |
+
+
 ### c. Parameter Efficient Fine Tuning (PEFT)
 모델 훈련의 효율성을 높이기 위해, 파라미터 효율적으로 fine-tuning 하는 Parameter-Efficient-Fine-Tuning(PEFT)방법을 사용하여 학습에 필요한 메모리 용량과 계산량의 크기를 줄였습니다. PEFT에서도 [LoRA](https://arxiv.org/pdf/2106.09685)와 [QLoRA](https://arxiv.org/pdf/2305.14314)라는 두 가지 기법을 활용하여 자원 소모를 최소화하였습니다.
 
@@ -149,10 +162,10 @@ _학습 및 추론의 실행 방법은 아래에서 확인하실 수 있습니�
 
 Forward pass 가 기존의 DPO와 RLHF 방식에 비해 절반으로 줄임으로써 메모리와 연산 효율성을 크게 향상시킵니다.
 
-ORPO 는 `Qwen2` 모델들에 적용하였습니다.
+저희는 ORPO 는 `Qwen2` 모델에 적용하였습니다.
 
 ## 7. Ensemble
-한국어 추론을 안정적이고 신뢰할 수 있는 성능으로 제공하고자 여러 모델을 선정 후 모델의 장점만을 선별하여 앙상블하는 방법을 채택하였습니다.
+한국어 추론을 안정적이고 신뢰할 수 있는 성능으로 제공하고자 여러 모델을 선정 후 모델의 장점만을 선별하여 앙상블하는 Hard Voting 방법을 채택하였습니다.
 
 
 <p align="center">
@@ -163,8 +176,20 @@ ORPO 는 `Qwen2` 모델들에 적용하였습니다.
 
 ## 8.레포지토리 구조 (Repository Structure)
 
-블라
+```
+# 학습에 필요한 리소스들을 보관하는 디렉토리
+resource
+└── data
 
+# 실행 가능한 python 스크립트를 보관하는 디렉토리
+run
+├── test.py
+└── train.py
+
+# 학습에 사용될 함수들을 보관하는 디렉토리
+src
+└── data.py
+```
 
 
 ## 8. 실행 방법 (How to Run)
@@ -232,16 +257,23 @@ KR-Conversation-Inference
 
 ---
 ## 9. 평가 결과
-어쩌구
+<p align="center">
+<img src="./asset/leaderboard.png">
+</p>
 
 
----
-## 10. 추후 연구 계획
-
-
----
-## 11. License
+## 10. License
 저쩌고
 
----
-## 12. Reference
+
+## 11. Reference
+- [Github teddysum/Korean_CCI_2024](https://github.com/teddysum/Korean_CCI_2024)
+- Brown, T. B. (2020). Language models are few-shot learners. NeurIPS 2020.
+- Kim, B., Kim, H., Lee, S. W., Lee, G., Kwak, D., Jeon, D. H., ... & Sung, N. (2021). What changes can large-scale language models bring? intensive study on hyperclova: Billions-scale korean generative pretrained transformers. EMNLP 2021.
+- Hu, E. J., Shen, Y., Wallis, P., Allen-Zhu, Z., Li, Y., Wang, S., ... & Chen, W. (2021). Lora: Low-rank adaptation of large language models. arXiv preprint arXiv:2106.09685.  
+- Wei, J., Wang, X., Schuurmans, D., Bosma, M., Xia, F., Chi, E., ... & Zhou, D. (2022). Chain-of-thought prompting elicits reasoning in large language models. NeurIPS, 35, 24824-24837.
+- Wang, X., Wei, J., Schuurmans, D., Le, Q., Chi, E., Narang, S., ... & Zhou, D. (2022). Self-consistency improves chain of thought reasoning in language models. ICLR 2023.
+- Bai, J., Bai, S., Chu, Y., Cui, Z., Dang, K., Deng, X., ... & Zhu, T. (2023). Qwen technical report. arXiv preprint arXiv:2309.16609.
+- White, J., Fu, Q., Hays, S., Sandborn, M., Olea, C., Gilbert, H., ... & Schmidt, D. C. (2023). A prompt pattern catalog to enhance prompt engineering with chatgpt. arXiv preprint arXiv:2302.11382.
+- Kim, S., Choi, S., & Jeong, M. (2024). Efficient and effective vocabulary expansion towards multilingual large language models. arXiv preprint arXiv:2402.14714.
+- Yuksekgonul, M., Bianchi, F., Boen, J., Liu, S., Huang, Z., Guestrin, C., & Zou, J. (2024). TextGrad: Automatic" Differentiation" via Text. arXiv preprint arXiv:2406.07496.
