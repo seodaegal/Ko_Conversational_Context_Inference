@@ -263,7 +263,6 @@ KR-Conversation-Inference
 
 
 ## 10. License
-저쩌고
 
 
 ## 11. Reference
