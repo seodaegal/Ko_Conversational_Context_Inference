@@ -95,7 +95,7 @@ _학습 및 추론의 실행 방법은 아래에서 확인하실 수 있습니�
 | [`MLP-KTLim/llama-3-Korean-Bllossom-8B`](https://huggingface.co/MLP-KTLim/llama-3-Korean-Bllossom-8B) | - | 2e-5 | 1 | 15 |
 | [`x2bee/POLAR-14B-v0.2`](https://huggingface.co/x2bee/POLAR-14B-v0.2) | QLoRA | 2e-5 | 1 | 18 |
 | [`rtzr/ko-gemma-2-9b-it`](https://huggingface.co/rtzr/ko-gemma-2-9b-it) | QLoRA | 2e-5 | 2 | 23 |
-| [`beomi/Solar-Ko-Recovery-11B`](https://huggingface.co/beomi/Solar-Ko-Recovery-11B) | LoRA | 2e-5 | 1 | 11 |
+| [`beomi/Solar-Ko-Recovery-11B`](https://huggingface.co/beomi/Solar-Ko-Recovery-11B) | QLoRA | 2e-5 | 1 | 11 |
 | [`yanolja/EEVE-Korean-Instruct-10.8B-v1.0`](https://huggingface.co/yanolja/EEVE-Korean-Instruct-10.8B-v1.0) | QLoRA | 2e-5 | 1 | 14 |
 | [`Qwen/Qwen2-7B`](https://huggingface.co/Qwen/Qwen2-7B) | - | 2e-5 | 1 | 6 |
 | [`Qwen/Qwen2-7B-Instruct`](https://huggingface.co/Qwen/Qwen2-7B-Instruct) | - | 2e-5 | 1 | 8 |
