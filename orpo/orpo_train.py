@@ -3,13 +3,11 @@ import torch
 from transformers import AutoModelForCausalLM, AutoTokenizer
 from datasets import Dataset
 from trl import ORPOTrainer, ORPOConfig
-from src.orpo_data import CustomDataset, custom_to_hf_dataset  # Importing your CustomDataset and conversion function
+from src.orpo_data import CustomDataset, custom_to_hf_dataset
 
 def main(args):
     model = AutoModelForCausalLM.from_pretrained(
         args.model_id,
-        # torch_dtype=torch.bfloat16 if args.bf16 else torch.float32,
-        # device_map="balanced",
         torch_dtype=torch.bfloat16,
         device_map="auto",
     )
